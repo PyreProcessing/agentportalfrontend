@@ -46,9 +46,9 @@ const SideBar = (props: Props) => {
         />
 
         <Image
-          src="/images/logo-full.svg"
-          width={190}
-          height={50}
+          src="/images/logo.png"
+          width={150}
+          height={75}
           className={styles.logo + ' ' + styles.fullLogo}
           style={{
             objectFit: 'contain',

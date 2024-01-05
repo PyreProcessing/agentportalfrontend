@@ -130,10 +130,8 @@ const Dashboard = (props: Props) => {
             enabled.
           </h1>
           <p>
-            To enhance your Truthcasting experience, you can add features such
-            as Video On Demand and Livestreaming. Please navigate to the
-            Features page to find the option to add these features and unlock
-            their functionalities.
+            Please contact your account manager to enable features for your
+            account.
           </p>
           <Link href="/features">
             <Button type="primary">Go to Features</Button>

@@ -36,7 +36,7 @@
       .title {
         font-size: 17px;
         font-weight: 600;
-        color: $color-primary;
+        color: $primary-color;
       }
     }
     .children {
@@ -82,7 +82,7 @@
         height: 100%;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
-        background-color: $color-secondary-2;
+        background-color: $secondary-color-lighter;
         box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
         transition: $simple-animation;
@@ -98,7 +98,7 @@
         }
       }
       .icon {
-        color: $color-primary;
+        color: $primary-color;
         width: 20px;
         height: 20px;
         margin-right: 10px;

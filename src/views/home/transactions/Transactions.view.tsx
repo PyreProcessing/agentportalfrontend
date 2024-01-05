@@ -73,7 +73,7 @@ const TransactionsView = (props: Props) => {
         {isError && <Error error={error} />}
         {isLoading && <Loader title="Fetching Transactions" />}
         {transactionsData &&
-          transactionsData?.data.visa.map((transaction) => (
+          transactionsData?.data?.visa?.map((transaction) => (
             <Transaction transaction={transaction} />
           ))}
       </Container>

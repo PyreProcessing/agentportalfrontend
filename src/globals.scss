@@ -1,13 +1,43 @@
 // Variables
 $white: rgb(244, 246, 248);
-$color-dark: rgb(23, 23, 23);
-$color-light: rgb(244, 246, 248);
-$color-primary: #4fad80;
-$color-primary-2: rgb(135, 212, 179);
 
-$color-secondary: rgb(71, 159, 181);
-$color-secondary-2: rgb(148, 224, 242);
-$color-secondary-3: rgb(85, 183, 209);
+$primary-color: #191d88;
+$primary-color-lighter: #2b2fb6;
+$primary-color-darker: #111461;
+$secondary-color: #1450a3;
+$secondary-color-lighter: #1f61be;
+$secondary-color-darker: #0f3872;
+$tertiary-color: #337ccf;
+$tertiary-color-lighter: #4e8cd3;
+$tertiary-color-darker: #286cb9;
+$quaternary-color: #ffc436;
+$quaternary-color-lighter: #ffd36c;
+$quaternary-color-darker: #ddaa33;
+$quintenary-color: #e3eefa;
+$quintenary-color-lighter: #e9eff7;
+$quintenary-color-darker: #cfdae7;
+$accent-color: #c42727;
+$accent-color-lighter: #c44f4f;
+$accent-color-darker: #921e1e;
+$accent-color-dark: #23262a;
+// all the colors in rgb
+$primary-color-rgb: (25 29 136);
+$primary-color-lighter-rgb: (43 47 182);
+$primary-color-darker-rgb: (17 20 97);
+$secondary-color-rgb: (20 80 163);
+$secondary-color-lighter-rgb: (31 97 190);
+$secondary-color-darker-rgb: (18 68 138);
+$tertiary-color-rgb: (51 124 207);
+$tertiary-color-lighter-rgb: (78 140 211);
+$tertiary-color-darker-rgb: (40 108 185);
+$quaternary-color-rgb: (255 196 54);
+$quaternary-color-lighter-rgb: (255 211 108);
+$quaternary-color-darker-rgb: (221 170 51);
+$accent-color-rgb: (196 39 39);
+$accent-color-lighter-rgb: (196 79 79);
+$accent-color-darker-rgb: (146 30 30);
+$accent-color-dark-rgb: (35 38 42);
+
 
 $mobile-width: 768px;
 $tablet-width: 1250px;

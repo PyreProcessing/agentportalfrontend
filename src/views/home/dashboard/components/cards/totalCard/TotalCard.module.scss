@@ -11,17 +11,17 @@
     justify-content: center;
     gap: 10px;
     font-size: 25px;
-    color: $color-primary;
+    color: $primary-color;
     .icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $color-primary;
+      color: $primary-color;
     }
   }
 
   .compare {
-    color: $color-primary;
+    color: $primary-color;
     font-weight: 900;
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@
         font-weight: 900;
 
         border-radius: 3px;
-        color: $color-primary;
+        color: $primary-color;
       }
 
       padding: 2px 5px;
@@ -44,7 +44,7 @@
       margin-bottom: 10px;
       margin-top: 5px;
       font-weight: 400;
-      background-color: $color-light;
+      background-color: $quintenary-color;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
   }

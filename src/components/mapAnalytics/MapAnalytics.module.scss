@@ -21,7 +21,7 @@
     // max-height: 300px;
     flex: 1;
     height: 100%;
-    background-color: $color-light;
+    background-color: $quintenary-color;
     max-height: 400px;
   }
   .mapInfo {
@@ -55,12 +55,12 @@
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          background-color: $color-dark;
+          background-color: $accent-color-dark;
           object-fit: cover;
         }
         .state {
           font-size: 1rem;
-          color: $color-dark;
+          color: $accent-color-dark;
         }
         .name {
           width: 100%;
@@ -69,11 +69,11 @@
       .info {
         font-size: 1rem;
         font-weight: 900;
-        color: $color-dark;
+        color: $accent-color-dark;
       }
     }
     .citiesContainer {
-      background-color: $color-light;
+      background-color: $quintenary-color;
       border-radius: 5px;
       padding: 10px;
       display: none;
@@ -89,11 +89,11 @@
 
         .cityName {
           font-size: 1rem;
-          color: $color-dark;
+          color: $accent-color-dark;
         }
         .cityInfo {
           font-size: 1rem;
-          color: $color-dark;
+          color: $accent-color-dark;
         }
       }
     }

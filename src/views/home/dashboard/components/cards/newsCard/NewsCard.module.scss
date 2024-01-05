@@ -5,12 +5,12 @@
     flex-direction: column;
     gap: 20px;
     .newsItem {
-      background-color: $color-light;
+      background-color: $quintenary-color;
       padding: 20px;
 
       h1 {
         font-size: 15px;
-        color: $color-primary;
+        color: $primary-color;
       }
       p {
         font-size: 13px;

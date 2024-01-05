@@ -1,8 +1,8 @@
 @import '../../globals.scss';
 .header {
   grid-area: header;
-  background-color: white;
-  color: $color-primary;
+  background-color: $white;
+  color: $primary-color;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +27,7 @@
       font-weight: 700;
       cursor: pointer;
       .active {
-        color: $color-primary;
+        color: $primary-color;
       }
 
       @include mobile {

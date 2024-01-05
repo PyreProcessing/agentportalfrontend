@@ -59,7 +59,7 @@ const PageLayout = (props: Props) => {
     <>
       <Head>
         <title>
-          Truthcasting Studio -{' '}
+          InfernoPay -{' '}
           {props.pages ? props?.pages[props.pages?.length - 1]?.title : ''}
         </title>
         <meta name="description" content="Truthcasting Studio" />

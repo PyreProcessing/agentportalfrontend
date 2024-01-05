@@ -6,8 +6,8 @@
   flex-direction: column;
   .headerContainer {
     width: 100%;
-    background-color: $color-light;
-    color: $color-primary;
+    background-color: $quintenary-color;
+    color: $primary-color;
 
     display: flex;
     align-items: center;
@@ -41,15 +41,15 @@
     }
     .amount {
       font-size: 20px;
-      color: $color-primary;
+      color: $primary-color;
     }
     .date {
       font-size: 14px;
-      color: $color-dark;
+      color: $accent-color-dark;
     }
   }
   h1 {
     font-size: 30px;
-    color: $color-primary;
+    color: $primary-color;
   }
 }

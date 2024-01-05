@@ -21,27 +21,32 @@ const Auth = (props: Props) => {
         <div className={styles.header}>
           <div className={styles.logoContainer}>
             <Image
-              src="/images/TruthcastingLogoBlack.png"
-              width={160}
-              height={50}
+              src="/images/logo.png"
+              width={300}
+              height={150}
               className={styles.logo + ' ' + styles.truthcastingLogo}
               style={{
                 objectFit: 'contain',
               }}
               alt="logo"
             />
-            <p className={styles.studio}>Studio</p>
           </div>
         </div>
         <p className={styles.text}>
           <span>Welcome</span>
           <br />
-          Please login to your Truthcasting account to continue.
+          Please login to your Inferno Pay account to continue.
         </p>
         <a
-          href={`https://auth.truthcasting.com?redirect=${
-            getAbsoluteUrl() + router.asPath
-          }`}
+          href={
+            process.env.ENV !== 'development'
+              ? `https://auth.truthcasting.com?redirect=${
+                  getAbsoluteUrl() + router.asPath
+                }`
+              : `http://localhost:3003?redirect=${
+                  getAbsoluteUrl() + router.asPath
+                }`
+          }
           className={styles.buttonLink}
         >
           <Button
@@ -70,11 +75,8 @@ const Auth = (props: Props) => {
         >
           <defs>
             <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-              <stop stop-color="rgba(35, 38, 42, 1)" offset="0%"></stop>
-              <stop
-                stop-color="rgba(56.41, 78.248, 107.365, 1)"
-                offset="100%"
-              ></stop>
+              <stop stopColor="rgba(196,39,39, 1)" offset="0%"></stop>
+              <stop stopColor="rgba(255,196,54, 1)" offset="100%"></stop>
             </linearGradient>
           </defs>
           <path

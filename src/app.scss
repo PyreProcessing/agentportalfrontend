@@ -929,7 +929,7 @@ a {
   pointer-events: none;
 }
 #nprogress .bar {
-  background: linear-gradient(90deg, $color-primary 0%, $color-primary 100%);
+  background: linear-gradient(90deg, $primary-color 0%, $primary-color 100%);
   opacity: 0.8;
   position: fixed;
   z-index: 20000;
