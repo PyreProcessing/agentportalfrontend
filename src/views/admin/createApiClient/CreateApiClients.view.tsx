@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import styles from './CreateAPIClient.module.scss';
+import styles from './CreateApiClient.module.scss';
 
 type Props = {};
 

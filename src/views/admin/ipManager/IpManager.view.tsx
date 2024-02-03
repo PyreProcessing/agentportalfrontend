@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import styles from './IPManager.module.scss';
+import styles from './IpManager.module.scss';
 
 type Props = {};
 
