@@ -4,7 +4,7 @@ import InventoryView from '@/views/organizations/inventory/Inventory.view';
 const Inventory = () => {
   return (
     <>
-      <PageLayout pages={[navigation().organization.links.inventory]}>
+      <PageLayout pages={[navigation()?.organization?.links?.inventory]}>
         <InventoryView />
       </PageLayout>
     </>

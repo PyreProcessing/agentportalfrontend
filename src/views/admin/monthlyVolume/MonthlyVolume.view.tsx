@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-import styles from './Assets.module.scss';
+import styles from './MonthlyVolume.module.scss';
 
 type Props = {};
 

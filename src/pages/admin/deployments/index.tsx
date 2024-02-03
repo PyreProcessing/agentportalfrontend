@@ -5,7 +5,7 @@ import DeploymentsView from '@/views/admin/deployments/Deployments.view';
 const Deployments = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.deployments]}>
+      <PageLayout pages={[navigation()?.admin?.links?.deployments]}>
         <DeploymentsView />
       </PageLayout>
     </>

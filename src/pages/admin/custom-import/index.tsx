@@ -5,7 +5,7 @@ import CustomImportView from '@/views/admin/customImport/CustomImport.view';
 const CustomImport = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.custonImport]}>
+      <PageLayout pages={[navigation()?.admin?.links?.custonImport]}>
         <CustomImportView />
       </PageLayout>
     </>

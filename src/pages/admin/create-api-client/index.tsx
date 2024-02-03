@@ -5,7 +5,7 @@ import CreateAPIClientView from '@/views/admin/createApiClient/CreateApiClients.
 const CreateAPIClient = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.createApiClient]}>
+      <PageLayout pages={[navigation()?.admin?.links?.createApiClient]}>
         <CreateAPIClientView />
       </PageLayout>
     </>

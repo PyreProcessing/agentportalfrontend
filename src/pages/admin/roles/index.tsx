@@ -5,7 +5,7 @@ import RolesView from '@/views/admin/roles/Roles.view';
 const Roles = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.roles]}>
+      <PageLayout pages={[navigation()?.admin?.links?.roles]}>
         <RolesView />
       </PageLayout>
     </>

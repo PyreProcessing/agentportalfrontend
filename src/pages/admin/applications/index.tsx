@@ -5,7 +5,7 @@ import ApplicationsView from '@/views/admin/applications/Applications.view';
 const Applications = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.applications]}>
+      <PageLayout pages={[navigation()?.admin?.links?.applications]}>
         <ApplicationsView />
       </PageLayout>
     </>

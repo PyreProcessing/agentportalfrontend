@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server.js",
+    "lint:fix": "next lint --fix",
+    "tsc:lint": "tsc --noEmit --skipLibCheck",
     "lint": "next lint"
   },
   "dependencies": {

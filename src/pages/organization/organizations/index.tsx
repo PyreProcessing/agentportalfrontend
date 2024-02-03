@@ -4,7 +4,7 @@ import OrganizationsView from '@/views/organizations/organizations/Organizations
 const Organizations = () => {
   return (
     <>
-      <PageLayout pages={[navigation().organization.links.organizations]}>
+      <PageLayout pages={[navigation()?.organization?.links?.organizations]}>
         <OrganizationsView />
       </PageLayout>
     </>

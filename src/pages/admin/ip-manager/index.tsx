@@ -5,7 +5,7 @@ import IPManagerView from '@/views/admin/ipManager/IpManager.view';
 const IPManager = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.ipManager]}>
+      <PageLayout pages={[navigation()?.admin?.links?.ipManager]}>
         <IPManagerView />
       </PageLayout>
     </>

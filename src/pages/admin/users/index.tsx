@@ -5,7 +5,7 @@ import UsersView from '@/views/admin/users/Users.view';
 const Users = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.users]}>
+      <PageLayout pages={[navigation()?.admin?.links?.users]}>
         <UsersView />
       </PageLayout>
     </>

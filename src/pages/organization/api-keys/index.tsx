@@ -4,7 +4,7 @@ import ApiKeysView from '@/views/organizations/apiKeys/ApiKeys.view';
 const APIKeys = () => {
   return (
     <>
-      <PageLayout pages={[navigation().organization.links.apiKeys]}>
+      <PageLayout pages={[navigation()?.organization?.links?.apiKeys]}>
         <ApiKeysView />
       </PageLayout>
     </>

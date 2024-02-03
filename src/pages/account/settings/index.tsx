@@ -5,7 +5,7 @@ import SettingsView from '@/views/account/settings/Settings.view';
 const Settings = () => {
   return (
     <>
-      <PageLayout pages={[navigation().account.links.settings]}>
+      <PageLayout pages={[navigation()?.account?.links?.settings]}>
         <SettingsView />
       </PageLayout>
     </>

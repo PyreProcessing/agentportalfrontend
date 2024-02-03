@@ -2,15 +2,15 @@ import styles from './Control.module.scss';
 import { ReactNode, useState } from 'react';
 import { useLayoutStore } from '@/state/ui/layout';
 import { useUser } from '@/state/auth';
-import { ControlNavItem } from '@/types/navigation';
+// import { ControlNavItem } from '@/types/navigation';
 import { Tooltip } from 'antd';
 
 type Props = {
-  navigation: Array<ControlNavItem>;
+  navigation: Array<any>;
 };
 
 const Control = (props: Props) => {
-  const [currentControlPage, setCurrentControlPage] = useState<ControlNavItem>(
+  const [currentControlPage, setCurrentControlPage] = useState<any>(
     props.navigation[0]
   );
 

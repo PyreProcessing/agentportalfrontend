@@ -140,7 +140,7 @@ const Dashboard = (props: Props) => {
       )}
       <div className={styles.container}>
         {cards
-          .filter((c) => !c.hideIf)
+          .filter((c: any) => !c.hideIf)
           .map((card: Card, index: number) => {
             return (
               <Card key={index} title={card.title} gridKey={card.gridKey}>

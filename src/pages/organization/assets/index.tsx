@@ -4,7 +4,7 @@ import AssetsView from '@/views/organizations/assets/Assets.view';
 const Assets = () => {
   return (
     <>
-      <PageLayout pages={[navigation().organization.links.assets]}>
+      <PageLayout pages={[navigation()?.organization?.links?.assets]}>
         <AssetsView />
       </PageLayout>
     </>

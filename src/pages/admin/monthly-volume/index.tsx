@@ -5,7 +5,7 @@ import MonthlyVolumeView from '@/views/admin/monthlyVolume/MonthlyVolume.view';
 const MonthlyVolume = () => {
   return (
     <>
-      <PageLayout pages={[navigation().admin.links.monthlyVolume]}>
+      <PageLayout pages={[navigation()?.admin?.links?.monthlyVolume]}>
         <MonthlyVolumeView />
       </PageLayout>
     </>
