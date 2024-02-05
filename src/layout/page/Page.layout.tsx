@@ -59,10 +59,17 @@ const PageLayout = (props: Props) => {
     <>
       <Head>
         <title>
-          InfernoPay -{' '}
+          PyrePortal -{' '}
           {props.pages ? props?.pages[props.pages?.length - 1]?.title : ''}
         </title>
-        <meta name="description" content="Truthcasting Studio" />
+        <meta
+          name="description"
+          content="Next Generation Payment Processing software for the modern world. Pyre Portal for agents to track their progress"
+        />
+        <meta
+          name="keywords"
+          content="Pyre, Portal, Payment, Processing, Software, Agents, Track, Progress"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

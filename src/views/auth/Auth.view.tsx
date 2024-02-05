@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import styles from './Auth.module.scss';
 import { useUser } from '@/state/auth';
+import CustomButton from '@/components/customButton/CustomButton.UI';
 
 type Props = {
   fullUrl?: string;
@@ -35,12 +36,12 @@ const Auth = (props: Props) => {
         <p className={styles.text}>
           <span>Welcome</span>
           <br />
-          Please login to your Inferno Pay account to continue.
+          Please login to your Pyre account to continue
         </p>
         <a
           href={
             process.env.ENV !== 'development'
-              ? `https://auth.truthcasting.com?redirect=${
+              ? `https://auth.pyreprocessing.com?redirect=${
                   getAbsoluteUrl() + router.asPath
                 }`
               : `http://localhost:3003?redirect=${
@@ -49,10 +50,8 @@ const Auth = (props: Props) => {
           }
           className={styles.buttonLink}
         >
-          <Button
+          <CustomButton
             className={styles.button}
-            type="primary"
-            size="large"
             loading={
               typeof window === 'undefined' ||
               !!window.localStorage.getItem('token')
@@ -63,7 +62,7 @@ const Auth = (props: Props) => {
             }
           >
             Login
-          </Button>
+          </CustomButton>
         </a>
       </div>
       <div className={styles.waveContainer}>
@@ -75,8 +74,8 @@ const Auth = (props: Props) => {
         >
           <defs>
             <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-              <stop stopColor="rgba(196,39,39, 1)" offset="0%"></stop>
-              <stop stopColor="rgba(255,196,54, 1)" offset="100%"></stop>
+              <stop stopColor="rgba(2, 34, 94, .1)" offset="0%"></stop>
+              <stop stopColor="rgba(0, 123, 205, .75)" offset="100%"></stop>
             </linearGradient>
           </defs>
           <path

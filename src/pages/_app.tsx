@@ -1,5 +1,6 @@
 import '@/globals.scss';
 import '@/app.scss';
+import '@/globals.css';
 import type { AppProps } from 'next/app';
 import { ConfigProvider } from 'antd';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -33,12 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#191d88;',
-            colorText: '#191d88;',
-          },
-        }}
+      // theme={{
+      // token: {
+      //   colorPrimary: '#003f92;',
+      //   colorText: '#191d88;',
+      // },
+      // }}
       >
         <AppWrapper>
           <Component {...pageProps} />
