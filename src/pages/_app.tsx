@@ -34,12 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ConfigProvider
-      // theme={{
-      // token: {
-      //   colorPrimary: '#003f92;',
-      //   colorText: '#191d88;',
-      // },
-      // }}
+      theme={{
+      token: {
+        colorPrimary: '#003f92;',
+        colorText: `#b9f7ff`,
+      },
+      }}
       >
         <AppWrapper>
           <Component {...pageProps} />

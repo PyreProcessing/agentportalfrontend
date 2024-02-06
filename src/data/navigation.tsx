@@ -1,33 +1,17 @@
 import { Navigation } from '@/types/navigation';
-import { FEATURES, hasFeature } from '@/utils/hasFeature';
-import { BiDonateHeart, BiLinkExternal } from 'react-icons/bi';
-import { BsBox, BsBroadcastPin } from 'react-icons/bs';
-import { BsFillPeopleFill } from 'react-icons/bs';
-import { CgProfile } from 'react-icons/cg';
-import { FaExternalLinkAlt, FaMoneyCheckAlt, FaRegBell } from 'react-icons/fa';
-import { HiCode } from 'react-icons/hi';
-import { IoIosNotifications } from 'react-icons/io';
-import {
-  MdLiveHelp,
-  MdLiveTv,
-  MdPlaylistPlay,
-  MdSettings,
-  MdVideoLibrary,
-} from 'react-icons/md';
 import { RiHome2Fill } from 'react-icons/ri';
-import { SiGoogleanalytics } from 'react-icons/si';
-
 import { HiOutlineChartSquareBar } from 'react-icons/hi';
 import { MdAttachMoney } from 'react-icons/md';
+import { FaUsers } from 'react-icons/fa';
+import checkRole from '@/utils/checkRole';
 
 export const navigation = (options?: {
   loggedInData?: { user: any };
   liveData?: { success: any; video: any };
 }) => {
-  const notAdmin = () => {
-    return options?.loggedInData?.user?.roleGuid !== '101uUKLJ8yN23I';
-  };
+  const userRoleArray = options?.loggedInData?.user.role;
 
+  console.log(checkRole(userRoleArray, ['admin']));
   const navigation: Navigation = {
     home: {
       title: 'Home',
@@ -35,20 +19,20 @@ export const navigation = (options?: {
         home: {
           title: 'Home',
           link: '/home',
-          hideIf: notAdmin(),
+          hideIf: !checkRole(userRoleArray, ['admin']),
           icon: <RiHome2Fill />,
         },
         transactions: {
           title: 'Transactions',
           link: '/home/transactions',
-          hideIf: notAdmin(),
+          hideIf: !checkRole(userRoleArray, ['admin']),
 
           icon: <MdAttachMoney />,
         },
         batches: {
           title: 'Batches',
           link: '/home/batches',
-          hideIf: notAdmin(),
+          hideIf: !checkRole(userRoleArray, ['admin']),
 
           icon: <HiOutlineChartSquareBar />,
         },
@@ -123,51 +107,53 @@ export const navigation = (options?: {
     //     },
     //   },
     // },
-    // admin: {
-    //   title: 'Admin',
-    //   links: {
-    //     users: {
-    //       title: 'Users',
-    //       link: '/admin/users',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     roles: {
-    //       title: 'Roles',
-    //       link: '/admin/roles',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     deployments: {
-    //       title: 'Deployments',
-    //       link: '/admin/deployments',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     createApiClient: {
-    //       title: 'Create API Client',
-    //       link: '/admin/create-api-client',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     applications: {
-    //       title: 'Applications',
-    //       link: '/admin/applications',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     ipManager: {
-    //       title: 'IP Manager',
-    //       link: '/admin/ip-manager',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     custonImport: {
-    //       title: 'Custom Import',
-    //       link: '/admin/custom-import',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //     monthlyVolume: {
-    //       title: 'Monthly Volume',
-    //       link: '/admin/monthly-volume',
-    //       icon: <BiDonateHeart />,
-    //     },
-    //   },
-    // },
+    admin: {
+      title: 'Admin',
+      hideIf: !checkRole(userRoleArray, ['admin']),
+      links: {
+        agents: {
+          title: 'Agents',
+          link: '/admin/agents',
+          icon: <FaUsers />,
+          hideIf: !checkRole(userRoleArray, ['admin']),
+        },
+        //     roles: {
+        //       title: 'Roles',
+        //       link: '/admin/roles',
+        //       icon: <BiDonateHeart />,
+        //     },
+        //     deployments: {
+        //       title: 'Deployments',
+        //       link: '/admin/deployments',
+        //       icon: <BiDonateHeart />,
+        //     },
+        //     createApiClient: {
+        //       title: 'Create API Client',
+        //       link: '/admin/create-api-client',
+        //       icon: <BiDonateHeart />,
+        //     },
+        //     applications: {
+        //       title: 'Applications',
+        //       link: '/admin/applications',
+        //       icon: <BiDonateHeart />,
+        //     },
+        //     ipManager: {
+        //       title: 'IP Manager',
+        //       link: '/admin/ip-manager',
+        //       icon: <BiDonateHeart />,
+        //     },
+        //     custonImport: {
+        //       title: 'Custom Import',
+        //       link: '/admin/custom-import',
+        //       icon: <BiDonateHeart />,
+        //     },
+        //     monthlyVolume: {
+        //       title: 'Monthly Volume',
+        //       link: '/admin/monthly-volume',
+        //       icon: <BiDonateHeart />,
+        //     },
+      },
+    },
     // account: {
     //   title: 'Account',
     //   links: {

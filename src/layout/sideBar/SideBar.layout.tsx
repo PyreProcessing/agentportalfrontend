@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './SideBar.module.scss';
 import { navigation } from '@/data/navigation';
 import { Button } from 'antd';
@@ -33,37 +33,22 @@ const SideBar = (props: Props) => {
             <RxHamburgerMenu />
           </div>
         )}
-
-        <Image
-          src="/images/logo.png"
-          width={20}
-          height={50}
-          className={styles.logo + ' ' + styles.smallLogo}
-          style={{
-            objectFit: 'contain',
-          }}
-          alt="logo"
-        />
-
-        <Image
-          src="/images/logo.png"
-          width={150}
-          height={75}
+        <span
           className={styles.logo + ' ' + styles.fullLogo}
           style={{
             objectFit: 'contain',
           }}
-          alt="logo"
-        />
+        >
+          PyrePortal
+        </span>
       </div>
 
       {Object.values(
         navigation({
-          // liveData,
           loggedInData,
         })
       )
-        .filter((i: any) => !i.hidden)
+        .filter((i: any) => !i.hideIf)
         .map((item: any) => {
           return (
             <div key={item.title} className={`${styles.group}`}>
@@ -71,7 +56,7 @@ const SideBar = (props: Props) => {
               <div className={styles.links}>
                 {item.links &&
                   Object.values(item.links)
-                    .filter((i: any) => !i.hidden)
+                    .filter((i: any) => !i.hideIf)
                     .map((subItem: any, indx: number) => {
                       return (
                         <Link

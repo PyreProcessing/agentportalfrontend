@@ -20,7 +20,7 @@
   --color-secondary300: #ff3333;
   --color-secondary200: #ff4d4d;
   --color-secondary100: #ff6666;
-  --color-primary-muted: #4d4d4d;
+  --color-primary-muted: #a19f9f;
   --color-primary-muted-rgb: 77, 77, 77;
   
   /* rgb values */
@@ -82,7 +82,7 @@ a {
 html, body {
   /* use a dark linear gradient with blue colors */
   background-image: linear-gradient(120deg, #0c0c0c 0%, var(--color-primary-dark) 100%);
-  color: var(--color-primary50);
+  color: var(--color-primary500);
   font-family: var(--font-family-primary);
   position: relative;
 }

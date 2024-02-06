@@ -10,10 +10,12 @@ export type Navigation = {
         icon: JSX.Element;
       };
     };
+    hideIf?: boolean;
     subLinks?: {
       [key: string]: {
         title: string;
         link: string;
+        hideIf?: boolean;
       };
     };
   };
