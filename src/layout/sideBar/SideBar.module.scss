@@ -43,10 +43,10 @@
 }
 
 .container {
-  border-right: 5px solid $primary-color;
+  border-right: 5px solid var(--color-primary500);
   height: 100%;
   overflow: auto;
-  background-color: $secondary-color-lighter;
+  background-image: linear-gradient(90deg, var(--color-primary900) 0%, var(--color-primary-dark) 100%);
   color: $accent-color;
   display: flex;
   flex-direction: column;
@@ -126,7 +126,7 @@
         transition: $animation;
         -webkit-transition: $animation;
         &.active {
-          background-color: $primary-color;
+          background-color: var(--color-primary500);
           padding: 15px 10px;
           border-radius: 5px;
           position: relative;
@@ -138,11 +138,12 @@
           color: white;
 
           &:hover {
+            color: var(--color-primary900)
           }
         }
 
         &:hover {
-          color: $primary-color;
+          color: var(--color-primary500);
         }
 
         &.pulse {

@@ -1,47 +1,34 @@
 @import './globals.scss';
 
 .editContainer {
-  background-color: var(--color-primary500);
-  border-radius: 10px;
+  background-color: #fcfcfc;
   padding: 50px;
   margin: 20px 0;
+  border-radius: 10px;
 }
 .form {
-  .inputAddOnAfter {
-    display: flex;
-    position: relative;
-    // target the child div with class ant-form-item
-    > div,
-    .ant-form-item {
-      position: relative;
-    }
-    .icon {
-      color: var(--color-primary100);
-    }
-  }
   label {
     font-size: 15px;
     font-weight: 400;
-    color: var(--color-primary50);
     @include mobile {
       font-size: 13px;
     }
   }
 
-  select {
-    padding: 16px 13px !important;
-  }
+  // :global(.ant-select-selector) {
+  //   padding: 6px;
+  // }
   .input {
     margin-bottom: 20px;
     border-radius: 10px;
     margin: 0;
     // background-color: white;
-    padding: 10px;
+    // padding: 10px;
     font-size: 15px;
     font-weight: 400;
     color: var(--color-primary200);
     width: 100%;
-    border: none;
+    // border: none;
     input {
       background-color: white;
     }
@@ -77,12 +64,22 @@
   }
 }
 
+.buttonGroup{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
 .button {
   margin-top: 20px;
-  background-color: var(--color-primary50);
   padding: 0 50px;
   font-weight: 600;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include mobile {
     width: 100%;

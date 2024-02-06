@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './SideBar.module.scss';
 import { navigation } from '@/data/navigation';
-import { Button } from 'antd';
 import Link from 'next/link';
-import Image from 'next/image';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { useLayoutStore } from '@/state/ui/layout';
 // import { useFindLiveVideo } from '@/state/videos/liveVideo';
