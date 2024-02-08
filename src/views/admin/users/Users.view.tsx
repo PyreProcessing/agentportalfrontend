@@ -21,13 +21,7 @@ type Props = {};
 
 const UsersView = (props: Props) => {
   const router = useRouter();
-  const {
-    data: { payload },
-    isFetching,
-    isLoading,
-    isError,
-    error,
-  } = useFetchData({
+  const { data, isFetching, isLoading, isError, error } = useFetchData({
     url: '/agent',
     key: 'agents',
   });
@@ -70,7 +64,7 @@ const UsersView = (props: Props) => {
             label: 'Oldest',
           },
         ]}
-        total={payload?.totalCount}
+        total={data?.payload?.totalCount}
         key={'agents'}
         isFetching={isFetching}
         disableButtons={isFetching}
@@ -172,7 +166,7 @@ const UsersView = (props: Props) => {
               },
             },
           ]}
-          dataSource={payload?.agents}
+          dataSource={data?.payload?.agents}
           rowKey="_id"
           pagination={false}
         />
