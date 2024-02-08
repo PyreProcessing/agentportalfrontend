@@ -6,10 +6,8 @@ import {
   Dropdown,
   Input,
   Pagination,
-  Popover,
   Skeleton,
   Space,
-  Switch,
   Tooltip,
 } from 'antd';
 import { useEffect, useState } from 'react';
@@ -18,9 +16,8 @@ import { AiFillFilter } from 'react-icons/ai';
 import styles from './SearchWrapper.module.scss';
 
 import type { MenuProps } from 'antd';
-import { MdFilter, MdSort } from 'react-icons/md';
-// import { useLibraryVideos } from '@/state/videos/userLibrary';
-import { useRouter } from 'next/router';
+import { MdSort } from 'react-icons/md';
+import Link from 'next/link';
 
 const { Search } = Input;
 
@@ -31,6 +28,7 @@ type Props = {
     type: 'link' | 'text' | 'primary' | 'dashed' | 'default' | undefined;
     toolTip?: string;
     shouldPulse?: boolean;
+    href?: string;
   }[];
   filters?: {
     label: string;
@@ -45,11 +43,11 @@ type Props = {
     key: string;
   }[];
   isFetching: any;
+  disableButtons?: boolean;
 };
 
 const SearchWrapper = (props: Props) => {
   const queryClient = useQueryClient();
-  const router = useRouter();
 
   const [searchText, setSearchText] = useState('');
   const {
@@ -139,6 +137,7 @@ const SearchWrapper = (props: Props) => {
           enterButton
           bordered={false}
           value={searchText}
+          disabled={props.disableButtons}
         />
         <div className={styles.buttonContainer}>
           {props.sort && (
@@ -148,6 +147,7 @@ const SearchWrapper = (props: Props) => {
                 items: sortItems,
                 selectable: true,
               }}
+              disabled={props.disableButtons}
             >
               <Button type="text">
                 <Space>
@@ -161,6 +161,7 @@ const SearchWrapper = (props: Props) => {
             <Dropdown
               className={styles.button}
               menu={{ items: filterItems, selectable: true }}
+              disabled={props.disableButtons}
             >
               <Button type="text">
                 <Space>
@@ -177,20 +178,31 @@ const SearchWrapper = (props: Props) => {
 
           {props.buttons?.map((button, indx) => (
             <Tooltip
+              key={button.type}
               title={button.toolTip}
               placement="bottomRight"
-              key={indx + 'tooltip' + button.toolTip}
             >
-              <Button
-                type={button.type}
-                shape="round"
-                className={`${styles.button} ${
-                  button.shouldPulse && styles.pulse
-                }`}
-                onClick={button.onClick}
-              >
-                {button.icon}
-              </Button>
+              {button.href ? (
+                <Link href={button.href}>
+                  <Button
+                    type={button.type}
+                    shape="round"
+                    className={styles.button}
+                    onClick={button.onClick}
+                  >
+                    {button.icon}
+                  </Button>
+                </Link>
+              ) : (
+                <Button
+                  type={button.type}
+                  shape="round"
+                  className={styles.button}
+                  onClick={button.onClick}
+                >
+                  {button.icon}
+                </Button>
+              )}
             </Tooltip>
           ))}
         </div>

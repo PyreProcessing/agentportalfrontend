@@ -6,11 +6,18 @@ import { BiLogOutCircle } from 'react-icons/bi';
 import { FaPlusCircle, FaRandom } from 'react-icons/fa';
 import generateRandomPassword from '@/utils/generateRandomPassword';
 import { useRouter } from 'next/router';
+import usePostData from '@/state/usePostData';
 
 const Invite = () => {
   const [form] = Form.useForm();
   const router = useRouter();
-
+  const { mutate: inviteAgent } = usePostData({
+    url: '/admin/invite-agent',
+    key: 'inviteAgent',
+    queriesToInvalidate: ['agents'],
+    redirectUrl: '/admin/agents',
+    successMessage: 'Agent invited successfully',
+  });
   const onFinish = (values: any) => {
     Modal.confirm({
       title: 'Invite Agent',
@@ -28,7 +35,7 @@ const Invite = () => {
       okText: 'Invite Agent',
       cancelText: 'Cancel',
       onOk() {
-        console.log('OK');
+        inviteAgent(values);
       },
       onCancel() {
         console.log('Cancel');

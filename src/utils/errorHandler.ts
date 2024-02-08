@@ -1,6 +1,5 @@
-import { logout } from '../state/auth';
+import { logout } from '@/state/auth';
 import { message } from 'antd';
-
 /**
  * @description - This function is used to handle errors in the client application.
  *
@@ -11,14 +10,12 @@ import { message } from 'antd';
  * @version - 1.0.0
  */
 export default (error) => {
-  const messageTxt =
-    error.response && error.response.data.message
-      ? error.response.data.message
-      : error.message;
+  const messageTxt = error.response?.data.message
+    ? error.response.data.message
+    : error.message;
   if (messageTxt === 'Not authorized, token failed') {
     logout();
   }
-  console.log('ERROR');
 
   message.error(messageTxt);
   return message;
