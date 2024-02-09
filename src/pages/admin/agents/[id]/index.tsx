@@ -1,6 +1,6 @@
 import PageLayout from '@/layout/page/Page.layout';
 import { navigation } from '@/data/navigation';
-import Invite from '@/views/admin/users/views/invite/Invite.view';
+import AgentDetails from '@/views/admin/users/views/agentDetails/AgentDetails.view';
 const Users = () => {
   return (
     <>
@@ -8,7 +8,7 @@ const Users = () => {
         pages={[navigation()?.admin?.links?.agents]}
         largeSideBar={true}
       >
-        <Invite />
+        <AgentDetails />
       </PageLayout>
     </>
   );

@@ -126,7 +126,7 @@ const UsersView = (props: Props) => {
                 return (
                   <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
                     {/* render a next/link as a button */}
-                    <Link href={`/professional_oddysey/blog/${record._id}`}>
+                    <Link href={`/admin/agents/${record._id}`}>
                       <Button
                         type="primary"
                         style={{
