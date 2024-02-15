@@ -2,6 +2,7 @@ export default interface UserType {
   _id: string;
   firstName: string;
   lastName?: string;
+  profileImageUrl?: string;
   status: "pending" | "active" | "inactive" | "deleted";
   fullName: string;
   email: string;
