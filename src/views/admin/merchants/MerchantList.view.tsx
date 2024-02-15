@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-
-import styles from './Users.module.scss';
+import React from 'react';
+import styles from './MerchantList.module.scss';
 import SearchWrapper from '@/layout/searchWrapper/SearchWrapper.layout';
-import { FaEdit, FaLink, FaPlus } from 'react-icons/fa';
+import { FaEdit, FaPlus } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import useFetchData from '@/state/useFetchData';
 import { Button, Modal, Table, Tag } from 'antd';
@@ -22,18 +21,18 @@ import UserType from '@/types/UserType';
 
 type Props = {};
 
-const UsersView = (props: Props) => {
+const MerchantList = (props: Props) => {
   const router = useRouter();
 
   const { data: loggedInData } = useUser();
   const user = loggedInData?.user;
   const { data, isFetching, isLoading, isError, error } = useFetchData({
-    url: '/admin/agent',
-    key: 'agents',
+    url: '/admin/merchant',
+    key: 'merchants',
   });
   const { mutate: deleteAgent } = useRemoveData({
-    queriesToInvalidate: ['agents'],
-    successMessage: 'Agent deleted successfully',
+    queriesToInvalidate: ['merchants'],
+    successMessage: 'Merchant Marked Inactive successfully',
   });
 
   if (isError) {
@@ -43,22 +42,22 @@ const UsersView = (props: Props) => {
   return (
     <div className={styles.container}>
       <SearchWrapper
-        placeholder="Search for agents"
-        queryKey="agents"
+        placeholder="Search for Merchants"
+        queryKey="merchants"
         buttons={[
           {
             icon: <FaPlus />,
-            toolTip: 'Add new agent',
+            toolTip: 'Invite new Merchant',
             type: 'link',
             onClick: () => {
-              router.push('/admin/agents/invite');
+              router.push('/admin/merchants/invite');
             },
           },
         ]}
         filters={[
           {
             key: '',
-            label: 'All Agents',
+            label: 'All Merchants',
           },
         ]}
         sort={[
@@ -76,7 +75,7 @@ const UsersView = (props: Props) => {
           },
         ]}
         total={data?.payload?.totalCount}
-        key={'agents'}
+        key={'merchants'}
         isFetching={isFetching}
         disableButtons={isFetching}
       >
@@ -184,7 +183,7 @@ const UsersView = (props: Props) => {
               },
             },
           ]}
-          dataSource={data?.payload?.agents}
+          dataSource={data?.payload?.merchants}
           rowKey="_id"
           pagination={false}
         />
@@ -193,4 +192,4 @@ const UsersView = (props: Props) => {
   );
 };
 
-export default UsersView;
+export default MerchantList;

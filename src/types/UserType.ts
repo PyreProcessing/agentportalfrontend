@@ -1,11 +1,14 @@
 export default interface UserType {
   _id: string;
   firstName: string;
-  lastName: string;
-  username: string;
+  lastName?: string;
+  status: "pending" | "active" | "inactive" | "deleted";
+  fullName: string;
   email: string;
-  profileImageUrl: string;
-  profile: any;
-  createdAt: string;
-  updatedAt: string;
+  password: string;
+  isEmailVerified: boolean;
+  role: [string];
+  createdAt: Date;
+  updatedAt: Date;
+  lastLogin: Date;
 }

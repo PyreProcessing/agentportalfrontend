@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import Error from '@/components/error/Error.component';
 import useFetchData from '@/state/useFetchData';
-import { Button, Form, Input, Select, Tooltip } from 'antd';
+import { Button, Form, Input, Select, Skeleton, Tooltip } from 'antd';
 import { useRouter } from 'next/router';
 import styles from './AgentDetails.module.scss';
 import formStyles from '@/Form.module.scss';
 import generateRandomPassword from '@/utils/generateRandomPassword';
 import { FaPlusCircle, FaRandom } from 'react-icons/fa';
+import { GrUpdate } from 'react-icons/gr';
 import { BiLogOutCircle } from 'react-icons/bi';
+import { NProgressLoader } from '@/components/nprogress/NProgressLoader.component';
+import useUpdateData from '@/state/useUpdateData';
 
 const AgentDetails = () => {
   const router = useRouter();
@@ -19,6 +22,11 @@ const AgentDetails = () => {
     key: 'agent',
   });
 
+  const { mutate: updateAgent } = useUpdateData({
+    queriesToInvalidate: ['agents'],
+    redirectUrl: '/admin/agents',
+    successMessage: `Agent ${data?.payload?.fullName} updated successfully`,
+  });
   useEffect(() => {
     if (data?.payload) {
       form.setFieldsValue(data.payload);
@@ -29,6 +37,9 @@ const AgentDetails = () => {
     return <Error error={error} />;
   }
 
+  if (isLoading) {
+    return <Skeleton active />;
+  }
   return (
     <div className={styles.container}>
       <Form
@@ -38,7 +49,14 @@ const AgentDetails = () => {
         initialValues={{
           role: ['agent'],
         }}
+        onFinish={(values) => {
+          updateAgent({
+            url: `/admin/agent/${id}`,
+            formData: { ...values },
+          });
+        }}
       >
+        {isFetching && <NProgressLoader />}
         <div className={formStyles.editContainer}>
           <div className={formStyles.group}>
             <Form.Item label="First Name" name="firstName">
@@ -84,6 +102,20 @@ const AgentDetails = () => {
                 <Select.Option value="admin">Admin</Select.Option>
                 <Select.Option value="developer">Developer</Select.Option>
                 <Select.Option value="merchant">Merchant</Select.Option>
+                <Select.Option value="owner">Owner</Select.Option>
+              </Select>
+            </Form.Item>
+          </div>
+          <div className={formStyles.group}>
+            <Form.Item label="Status" name="status">
+              <Select
+                style={{ width: '100%' }}
+                allowClear
+                className={formStyles.input}
+              >
+                <Select.Option value="active">Active</Select.Option>
+                <Select.Option value="inactive">Inactive</Select.Option>
+                <Select.Option value="pending">Pending</Select.Option>
               </Select>
             </Form.Item>
           </div>
@@ -93,9 +125,9 @@ const AgentDetails = () => {
             type="primary"
             htmlType="submit"
             className={formStyles.button}
-            icon={<FaPlusCircle />}
+            icon={<FaPlusCircle className={formStyles.icon} />}
           >
-            Invite Agent
+            Update Agent
           </Button>
           <Button
             type="default"

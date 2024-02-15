@@ -2,16 +2,15 @@ import { Navigation } from '@/types/navigation';
 import { RiHome2Fill } from 'react-icons/ri';
 import { HiOutlineChartSquareBar } from 'react-icons/hi';
 import { MdAttachMoney } from 'react-icons/md';
-import { FaUsers } from 'react-icons/fa';
+import { FaStore, FaUsers } from 'react-icons/fa';
 import checkRole from '@/utils/checkRole';
 
 export const navigation = (options?: {
   loggedInData?: { user: any };
   liveData?: { success: any; video: any };
 }) => {
-  const userRoleArray = options?.loggedInData?.user.role;
+  const userRoleArray = options?.loggedInData?.user?.role;
 
-  console.log(checkRole(userRoleArray, ['admin']));
   const navigation: Navigation = {
     home: {
       title: 'Home',
@@ -117,11 +116,11 @@ export const navigation = (options?: {
           icon: <FaUsers />,
           hideIf: !checkRole(userRoleArray, ['admin']),
         },
-        //     roles: {
-        //       title: 'Roles',
-        //       link: '/admin/roles',
-        //       icon: <BiDonateHeart />,
-        //     },
+        merchants: {
+          title: 'Merchants',
+          link: '/admin/merchants',
+          icon: <FaStore />,
+        },
         //     deployments: {
         //       title: 'Deployments',
         //       link: '/admin/deployments',
