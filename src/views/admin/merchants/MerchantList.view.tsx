@@ -84,7 +84,12 @@ const MerchantList = (props: Props) => {
           size="small"
           columns={[
             {
-              title: 'Agent Name',
+              title: 'Business',
+              dataIndex: 'businessName',
+              key: 'businessName',
+            },
+            {
+              title: 'Merchant Name',
               dataIndex: 'fullName',
               key: 'name',
             },
@@ -136,7 +141,7 @@ const MerchantList = (props: Props) => {
                 return (
                   <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
                     {/* render a next/link as a button */}
-                    <Link href={`/admin/agents/${record._id}`}>
+                    <Link href={`/admin/merchants/${record._id}`}>
                       <Button
                         type="primary"
                         style={{
@@ -183,7 +188,7 @@ const MerchantList = (props: Props) => {
               },
             },
           ]}
-          dataSource={data?.payload?.merchants}
+          dataSource={data?.payload?.data}
           rowKey="_id"
           pagination={false}
         />
