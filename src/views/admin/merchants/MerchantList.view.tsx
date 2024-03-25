@@ -27,8 +27,9 @@ const MerchantList = (props: Props) => {
   const { data: loggedInData } = useUser();
   const user = loggedInData?.user;
   const { data, isFetching, isLoading, isError, error } = useFetchData({
-    url: '/admin/merchant',
+    url: '/admin/agent',
     key: 'merchants',
+    filter: 'role;merchant',
   });
   const { mutate: deleteAgent } = useRemoveData({
     queriesToInvalidate: ['merchants'],
@@ -87,6 +88,10 @@ const MerchantList = (props: Props) => {
               title: 'Business',
               dataIndex: 'businessName',
               key: 'businessName',
+              render: (text: any, record: any) => (
+                // if undefined, return a default value
+                <span>{text ?? 'N/A'}</span>
+              ),
             },
             {
               title: 'Merchant Name',
@@ -158,13 +163,15 @@ const MerchantList = (props: Props) => {
                       onClick={() =>
                         Modal.confirm({
                           title:
-                            'Are you sure you want this agent to be marked inactive?',
+                            'Are you sure you want this Merchant to be marked inactive?',
                           content:
-                            'this may interfere with the accounts the agent is responsible for.',
+                            "this will interfere with the Merchant's ability to login and use the platform. Are you sure you want to continue, as well as the Merchant's ability to process transactions?",
                           okText: 'Mark Inactive',
                           okButtonProps: { danger: true },
                           onOk: () => {
-                            deleteAgent({ url: `/admin/agent/${record._id}` });
+                            deleteAgent({
+                              url: `/admin/merchant/${record._id}`,
+                            });
                             Modal.destroyAll();
                           },
                         })
@@ -188,7 +195,7 @@ const MerchantList = (props: Props) => {
               },
             },
           ]}
-          dataSource={data?.payload?.data}
+          dataSource={data?.payload?.agents}
           rowKey="_id"
           pagination={false}
         />

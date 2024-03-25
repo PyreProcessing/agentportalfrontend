@@ -29,13 +29,13 @@ const MerchantDetails = () => {
   });
 
   const { data, isLoading } = useFetchData({
-    url: `/admin/merchant/${id}`,
+    url: `/admin/agent/${id}`,
     key: 'merchant',
   });
 
   const onFinish = async (values: any) => {
     if (id) {
-      updateMerchant({ url: `/admin/merchant/${id}`, formData: { ...values } });
+      updateMerchant({ url: `/admin/agent/${id}`, formData: { ...values } });
     } else {
       createMerchant(values);
     }
@@ -201,7 +201,11 @@ const MerchantDetails = () => {
               </Form.Item>
             </div>
             <div className={formStyles.form__inputGroup}>
-              <Form.Item label="Email Verified" name="isEmailVerified">
+              <Form.Item
+                label="Email Verified"
+                name="isEmailVerified"
+                valuePropName="checked"
+              >
                 <Switch
                   unCheckedChildren="Not Verified"
                   checkedChildren="Verified"
