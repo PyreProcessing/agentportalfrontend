@@ -200,6 +200,7 @@ const MerchantDetails = () => {
                 <Input type="text" readOnly disabled />
               </Form.Item>
             </div>
+
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label="Email Verified"
@@ -210,6 +211,18 @@ const MerchantDetails = () => {
                   unCheckedChildren="Not Verified"
                   checkedChildren="Verified"
                 />
+              </Form.Item>
+            </div>
+          </div>
+          <div className={formStyles.form__formGroup}>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item label="Merchant User" name="merchantUser">
+                <Input type="text" />
+              </Form.Item>
+            </div>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item label="Merchant Pass" name="merchantPass">
+                <Input type="text" />
               </Form.Item>
             </div>
           </div>
