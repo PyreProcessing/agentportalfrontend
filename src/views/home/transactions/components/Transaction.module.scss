@@ -1,4 +1,27 @@
-@import '../../../../globals.scss';
+@import '@/globals.scss';
 .container {
-  background-color: $primary-color-darker;
+  background-color: var(--color-primary);
+  padding: 2%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    .type {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .total{
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+  .count{
+    display: flex;
+    justify-content: flex-end;
+  }
 }

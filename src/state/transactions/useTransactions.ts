@@ -4,11 +4,9 @@ import { useQueryClient } from '@tanstack/react-query';
 import errorHandler from '@/utils/errorHandler';
 import { message } from 'antd';
 
-export const fetchTransactions = async (startDate, endDate) => {
-  console.log(startDate, endDate);
-
+export const fetchTransactions = async (startDate, endDate) => {  
   const { data } = await axios.get(
-    `/owner/transaction?startDate=${startDate}&endDate=${endDate}`
+    `/owner/transaction?agent=true&startDate=${startDate}&endDate=${endDate}`
   );
   return data;
 };

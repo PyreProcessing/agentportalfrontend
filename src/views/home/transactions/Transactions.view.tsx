@@ -19,12 +19,7 @@ const TransactionsView = (props: Props) => {
     endDate: moment().endOf('year'),
   });
 
-  const {
-    data: transactionsData,
-    isLoading,
-    isError,
-    error,
-  } = useTransactions({
+  const { data, isLoading, isError, error } = useTransactions({
     startDate: dateRange.startDate.toDate(),
     endDate: dateRange.endDate.toDate(),
   });
@@ -39,6 +34,7 @@ const TransactionsView = (props: Props) => {
     ]);
   }, [dateRange]);
 
+  const transactionsData = data?.payload;
   return (
     <div className={styles.container}>
       <Container title="Year by year transactions">
@@ -71,11 +67,12 @@ const TransactionsView = (props: Props) => {
           </div>
         </div>
         {isError && <Error error={error} />}
-        {isLoading && <Loader title="Fetching Transactions" />}
-        {transactionsData &&
-          transactionsData?.data?.visa?.map((transaction) => (
-            <Transaction transaction={transaction} />
-          ))}
+        {isLoading && <Loader title="Fetching Transactions" />}{' '}
+        {transactionsData && (
+          <Transaction
+            transaction={{ type: 'PayNetWorx', ...transactionsData }}
+          />
+        )}
       </Container>
     </div>
   );
