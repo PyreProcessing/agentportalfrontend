@@ -24,3 +24,23 @@
     flex-direction: column;
   }
 }
+
+// takes up full width
+.containerXlg { 
+  width: 100%;
+}
+
+// takes up 75% of the width
+.containerLg {
+  flex: 0.75;
+}
+
+// takes up 50% of the width
+.containerMd {
+  flex: 0.5;
+}
+
+// takes up 25% of the width
+.containerSm {
+  flex: 0.25;
+}
