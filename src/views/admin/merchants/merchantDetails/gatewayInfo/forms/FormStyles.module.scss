@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .logoContainer {
+    flex: 0.25;
+  }
+  .formFields {
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
