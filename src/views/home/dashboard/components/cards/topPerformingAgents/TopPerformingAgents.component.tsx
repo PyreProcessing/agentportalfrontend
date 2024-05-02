@@ -39,10 +39,6 @@ const TopPerformingAgents = () => {
       rowKey="_id"
       loading={isLoading || isFetching}
       pagination={false}
-      // if there is an error, display the error message
-      footer={() => (!isError ? <div> 
-        {/* {error.message} */} stuff
-        </div> : null)}
     />
   );
 };
