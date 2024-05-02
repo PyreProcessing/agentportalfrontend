@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import capitalizeWords from '@/utils/capitalizeWords';
 import NmiForms from './forms/NmiForms.component';
 import useUpdateData from '@/state/useUpdateData';
+import Paynetworx from './forms/Paynetworx.component';
+import Paybright from './forms/Paybright.component';
+import Celero from './forms/Celero.component';
 
 const GatewayInfo = () => {
   const [form] = Form.useForm();
@@ -41,10 +44,10 @@ const GatewayInfo = () => {
         initialValues={{}}
         onFinish={onFinish}
       >
-        <Form.Item name="_id" hidden>
-          <Input />
-        </Form.Item>
         <NmiForms form={form} />
+        <Paynetworx form={form} />
+        <Paybright form={form} />
+        <Celero form={form} />
         <div className={formStyles.form__buttonContainer}>
           <Button className={formStyles.button} htmlType="submit">
             {id ? 'Update Merchant' : 'Invite Merchant'}

@@ -2,8 +2,10 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  min-height: 150px;
   .logoContainer {
     flex: 0.25;
+    height: 100%;
   }
   .formFields {
     flex: 0.75;
@@ -11,4 +13,9 @@
     flex-direction: column;
     gap: 20px;
   }
+}
+
+.actionContainer{
+  display: flex;
+  justify-content: flex-end;
 }

@@ -20,7 +20,7 @@ const MerchantDetails = () => {
 
   return (
     <div className={styles.container}>
-      <Tabs defaultActiveKey="2" type="line">
+      <Tabs defaultActiveKey="1" type="card">
         {tabs.map((tab) => (
           <Tabs.TabPane tab={tab.title} key={tab.key}>
             {tab.content}
