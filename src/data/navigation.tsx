@@ -28,13 +28,13 @@ export const navigation = (options?: {
 
           icon: <MdAttachMoney />,
         },
-        batches: {
-          title: 'Batches',
-          link: '/home/batches',
-          hideIf: !checkRole(userRoleArray, ['admin']),
+        // batches: {
+        //   title: 'Batches',
+        //   link: '/home/batches',
+        //   hideIf: !checkRole(userRoleArray, ['admin']),
 
-          icon: <HiOutlineChartSquareBar />,
-        },
+        //   icon: <HiOutlineChartSquareBar />,
+        // },
         // deposits: {
         //   title: 'Deposits',
         //   link: '/home/deposits',
