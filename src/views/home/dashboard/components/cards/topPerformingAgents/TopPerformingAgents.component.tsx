@@ -5,7 +5,7 @@ import { Table } from 'antd';
 
 const TopPerformingAgents = () => {
   const { data, isLoading, isError, isFetching, error } = useFetchData({
-    url: '/agent/agent-reports1',
+    url: '/agent/agent-reports',
     key: 'topPerformingAgents',
     pageLimit: 3,
   });
