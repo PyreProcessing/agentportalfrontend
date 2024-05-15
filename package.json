@@ -3,9 +3,9 @@
   "version": "0.3.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "node server.js",
+    "start": "next start -p 3001",
     "lint:fix": "next lint --fix",
     "tsc:lint": "tsc --noEmit --skipLibCheck",
     "lint": "next lint"
