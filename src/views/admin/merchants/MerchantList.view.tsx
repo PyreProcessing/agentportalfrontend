@@ -29,7 +29,8 @@ const MerchantList = (props: Props) => {
   const { data, isFetching, isLoading, isError, error } = useFetchData({
     url: '/admin/agent',
     key: 'merchants',
-    filter: 'role;merchant',
+    filter: 'role;{"$elemMatch":"merchant"}',
+    refetchOnWindowFocus: false,
   });
   const { mutate: deleteAgent } = useRemoveData({
     queriesToInvalidate: ['merchants'],

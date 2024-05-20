@@ -62,7 +62,7 @@ const MerchantInfo = () => {
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label="Business Name"
-                name="businessName"
+                name={['businessInfo', 'name']}
                 rules={[
                   {
                     required: true,
@@ -97,7 +97,7 @@ const MerchantInfo = () => {
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label="Email"
-                name="email"
+                name={['businessInfo', 'email']}
                 rules={[
                   {
                     required: true,
@@ -111,7 +111,7 @@ const MerchantInfo = () => {
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label="Phone"
-                name="phoneNumber"
+                name={['businessInfo', 'phone']}
                 rules={[
                   {
                     required: true,
@@ -215,6 +215,26 @@ const MerchantInfo = () => {
                   unCheckedChildren="Not Verified"
                   checkedChildren="Verified"
                 />
+              </Form.Item>
+            </div>
+          </div>
+          <div className={formStyles.form__formGroup}>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label="Privacy Policy"
+                tooltip="https link to the merchants privacy policy page"
+                name={['businessInfo', 'privacyPolicy']}
+              >
+                <Input placeholder="Privacy Policy" />
+              </Form.Item>
+            </div>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label="Terms of Use/Service"
+                tooltip="https link to the merchants terms of use page"
+                name={['businessInfo', 'termsOfService']}
+              >
+                <Input placeholder="Terms of Use" />
               </Form.Item>
             </div>
           </div>

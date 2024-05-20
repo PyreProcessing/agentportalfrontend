@@ -30,6 +30,8 @@ const UsersView = (props: Props) => {
   const { data, isFetching, isLoading, isError, error } = useFetchData({
     url: '/admin/agent',
     key: 'agents',
+    filter: 'role;{"$elemMatch":"agent"}',
+    refetchOnWindowFocus: false,
   });
   const { mutate: deleteAgent } = useRemoveData({
     queriesToInvalidate: ['agents'],
