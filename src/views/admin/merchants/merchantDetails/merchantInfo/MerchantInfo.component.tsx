@@ -96,8 +96,19 @@ const MerchantInfo = () => {
           <div className={formStyles.form__formGroup}>
             <div className={formStyles.form__inputGroup}>
               <Form.Item
-                label="Email"
+                label="Business Email"
                 name={['businessInfo', 'email']}
+                rules={[]}
+                tooltip="Email used for business communication"
+              >
+                <Input type="email" placeholder="something@email.com" />
+              </Form.Item>
+            </div>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label="Email"
+                name={'email'}
+                tooltip="Email used for login"
                 rules={[
                   {
                     required: true,
