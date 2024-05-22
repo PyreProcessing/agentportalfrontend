@@ -24,9 +24,8 @@ const MerchantInfo = () => {
   });
 
   const { mutate: updateMerchant } = useUpdateData({
-    queriesToInvalidate: ['merchants'],
+    queriesToInvalidate: ['merchants', 'merchant'],
     successMessage: 'Merchant updated successfully',
-    redirectUrl: '/admin/merchants',
   });
   const { data, isLoading } = useFetchData({
     url: `/admin/agent/${id}`,
@@ -41,7 +40,7 @@ const MerchantInfo = () => {
     }
   };
   React.useEffect(() => {
-    if (data?.payload) {
+    if (id && data?.payload) {
       form.setFieldsValue(data.payload);
     }
   }, [data?.payload]);
@@ -59,20 +58,6 @@ const MerchantInfo = () => {
       >
         <div className={formStyles.form__formContainer}>
           <div className={formStyles.form__formGroup}>
-            <div className={formStyles.form__inputGroup}>
-              <Form.Item
-                label="Business Name"
-                name={['businessInfo', 'name']}
-                rules={[
-                  {
-                    required: true,
-                    message: 'Business Name is required',
-                  },
-                ]}
-              >
-                <Input type="text" placeholder="1234 holding company" />
-              </Form.Item>
-            </div>
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label="Merchant First Name"
@@ -96,16 +81,6 @@ const MerchantInfo = () => {
           <div className={formStyles.form__formGroup}>
             <div className={formStyles.form__inputGroup}>
               <Form.Item
-                label="Business Email"
-                name={['businessInfo', 'email']}
-                rules={[]}
-                tooltip="Email used for business communication"
-              >
-                <Input type="email" placeholder="something@email.com" />
-              </Form.Item>
-            </div>
-            <div className={formStyles.form__inputGroup}>
-              <Form.Item
                 label="Email"
                 name={'email'}
                 tooltip="Email used for login"
@@ -122,7 +97,7 @@ const MerchantInfo = () => {
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label="Phone"
-                name={['businessInfo', 'phone']}
+                name={'phoneNumber'}
                 rules={[
                   {
                     required: true,
@@ -226,26 +201,6 @@ const MerchantInfo = () => {
                   unCheckedChildren="Not Verified"
                   checkedChildren="Verified"
                 />
-              </Form.Item>
-            </div>
-          </div>
-          <div className={formStyles.form__formGroup}>
-            <div className={formStyles.form__inputGroup}>
-              <Form.Item
-                label="Privacy Policy"
-                tooltip="https link to the merchants privacy policy page"
-                name={['businessInfo', 'privacyPolicy']}
-              >
-                <Input placeholder="Privacy Policy" />
-              </Form.Item>
-            </div>
-            <div className={formStyles.form__inputGroup}>
-              <Form.Item
-                label="Terms of Use/Service"
-                tooltip="https link to the merchants terms of use page"
-                name={['businessInfo', 'termsOfService']}
-              >
-                <Input placeholder="Terms of Use" />
               </Form.Item>
             </div>
           </div>

@@ -87,7 +87,7 @@ const MerchantList = (props: Props) => {
           columns={[
             {
               title: 'Business',
-              dataIndex: 'businessName',
+              dataIndex: ['businessInfo', 'name'],
               key: 'businessName',
               render: (text: any, record: any) => (
                 // if undefined, return a default value

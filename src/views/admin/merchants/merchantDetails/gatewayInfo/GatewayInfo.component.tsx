@@ -22,14 +22,14 @@ const GatewayInfo = () => {
     enabled: !!id,
   });
   const { mutate: updateMerchant } = useUpdateData({
-    queriesToInvalidate: ['merchants'],
+    queriesToInvalidate: ['merchants', 'merchant'],
     successMessage: 'Merchant updated successfully',
   });
   const onFinish = async (values: any) => {
     updateMerchant({ url: `/admin/agent/${id}`, formData: { ...values } });
   };
   React.useEffect(() => {
-    if (data?.payload) {
+    if (id && data?.payload) {
       form.setFieldsValue(data.payload);
     }
   }, [data?.payload]);

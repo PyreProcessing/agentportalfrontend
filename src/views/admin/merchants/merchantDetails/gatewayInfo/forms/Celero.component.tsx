@@ -15,6 +15,7 @@ const Celero = (props: CeleroProps) => {
             className={styles.logo}
             src="https://celerocommerce.com/wp-content/uploads/2023/12/Celero-commerce-Alternate-300x90.png"
             alt="Celero Logo"
+            preview={false}
           />
         </div>
         <div className={styles.formFields}>

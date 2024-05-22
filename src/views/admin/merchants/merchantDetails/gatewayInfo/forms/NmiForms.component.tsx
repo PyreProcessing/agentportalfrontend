@@ -15,6 +15,7 @@ const NmiForms = (props: NmiFormsProps) => {
             className={styles.logo}
             src="https://www.nmi.com/wp-content/themes/nmi/images/NMI_Logo_Primary.webp"
             alt="NMI Logo"
+            preview={false}
           />
         </div>
         <div className={styles.formFields}>

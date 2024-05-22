@@ -15,6 +15,7 @@ const Paynetworx = (props: PaynetworxProps) => {
             className={styles.logo}
             src="https://payment-api-docs.paynetworx.com/pnlogo.png"
             alt="Paynetworx Logo"
+            preview={false}
           />
         </div>
         <div className={styles.formFields}>

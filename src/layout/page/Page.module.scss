@@ -148,7 +148,8 @@
       overflow-y: auto;
       padding-bottom: $header-height;
       overflow-y: auto;
-
+      position: relative;
+      
       .childrenContainer {
         position: relative;
         padding: 20px;

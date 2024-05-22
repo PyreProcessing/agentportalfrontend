@@ -15,6 +15,7 @@ const Paybright = (props: PaybrightProps) => {
             className={styles.logo}
             src="https://paybrightgateway.com/branding/logo.png"
             alt="Paybright Logo"
+            preview={false}
           />
         </div>
         <div className={styles.formFields}>

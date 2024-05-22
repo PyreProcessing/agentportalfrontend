@@ -22,7 +22,7 @@ import Loader from '../loader/Loader.component';
 type Props = {
   default?: string;
   label?: string;
-  name?: string;
+  name?: string | string[];
   listType?: 'picture-card' | 'text' | 'picture-circle';
   action?: string;
   placeholder?: string;
@@ -30,6 +30,8 @@ type Props = {
   isAvatar?: boolean;
   imgStyle?: React.CSSProperties;
   form: FormInstance;
+  aspectRatio?: number;
+  data?: any;
 };
 
 const PhotoUpload = (props: Props) => {
@@ -90,7 +92,7 @@ const PhotoUpload = (props: Props) => {
       >
         <Cropper
           cropShape={props.isAvatar ? 'round' : 'rect'}
-          aspect={props.isAvatar ? 1 : 16 / 9}
+          aspect={props.aspectRatio ?? 16 / 9}
           beforeCrop={beforeUpload}
         >
           <Upload
@@ -102,11 +104,12 @@ const PhotoUpload = (props: Props) => {
             action={
               props.action
                 ? props.action
-                : 'https://api.truthcasting.com/api/v1/upload'
+                : 'https://api.pyreprocesing.com/api/v1/upload'
             }
             headers={{
               Authorization: `Bearer ${localStorage.getItem('token')}`,
-            }}
+            }} // add body data to the request
+            data={props.data ? props.data : {}}
           >
             {loading ? (
               <Loader />

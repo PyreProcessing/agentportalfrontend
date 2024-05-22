@@ -3,6 +3,9 @@ import styles from './MerchantDetails.module.scss';
 import { Tabs } from 'antd';
 import MerchantInfo from './merchantInfo/MerchantInfo.component';
 import GatewayInfo from './gatewayInfo/GatewayInfo.component';
+import BusinessInfo from './businessInfo/BusinessInfo.component';
+import AnimatedDiv from '@/components/UI/animatedDiv/AnimatedDiv.UI';
+import { AnimatePresence } from 'framer-motion';
 
 const MerchantDetails = () => {
   const tabs = [
@@ -16,6 +19,11 @@ const MerchantDetails = () => {
       key: '2',
       content: <GatewayInfo />,
     },
+    {
+      title: 'Business Info',
+      key: '3',
+      content: <BusinessInfo />,
+    },
   ];
 
   return (
@@ -23,7 +31,17 @@ const MerchantDetails = () => {
       <Tabs defaultActiveKey="1" type="card">
         {tabs.map((tab) => (
           <Tabs.TabPane tab={tab.title} key={tab.key}>
-            {tab.content}
+            <AnimatePresence mode="wait">
+              <AnimatedDiv
+                transitionType="fade"
+                duration={0.5}
+                key={`switchableView-${tab.key}`}
+                type="whileInView"
+                className={styles.heroContainer}
+              >
+                {tab.content}
+              </AnimatedDiv>
+            </AnimatePresence>
           </Tabs.TabPane>
         ))}
       </Tabs>
