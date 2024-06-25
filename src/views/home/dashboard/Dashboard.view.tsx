@@ -23,7 +23,7 @@ const Dashboard = (props: Props) => {
       component: <TransactionsThisMonth />,
       gridKey: 'transactions',
       hideIf: !loggedInData,
-      className: `containerLg`,
+      className: `containerXlg`,
     },
     {
       title: 'Top Performing Agents',

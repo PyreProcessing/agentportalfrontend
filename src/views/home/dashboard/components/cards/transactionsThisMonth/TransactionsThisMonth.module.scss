@@ -1,11 +1,13 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  .contentContainer{
-    
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  .buttonContainer{
+  .buttonContainer {
     display: flex;
     justify-content: flex-end;
     gap: 10px;

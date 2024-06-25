@@ -1,11 +1,14 @@
 @import '@/globals.scss';
 .container {
   background-color: var(--color-primary);
-  padding: 2%;
+  padding: 1%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-
+  // every other odd container will have a different background color
+  &:nth-child(odd) {
+    background-color: var(--color-primary800);
+  }
   .flexContainer {
     display: flex;
     justify-content: space-between;

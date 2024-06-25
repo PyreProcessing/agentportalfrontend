@@ -174,6 +174,15 @@ const MerchantInfo = () => {
                 />
               </Form.Item>
             </div>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label="Agent Code"
+                name="agentCode"
+                tooltip="this field is useful if this merchant/agent is intent on signing others up for processing"
+              >
+                <Input type="text" />
+              </Form.Item>
+            </div>
           </div>
         </div>
         <Divider orientation="left">Misc. Information</Divider>

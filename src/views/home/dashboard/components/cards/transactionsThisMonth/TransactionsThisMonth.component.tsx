@@ -40,11 +40,10 @@ const TransactionsThisMonth = () => {
       <div className={styles.contentContainer}>
         {isError && <Error error={error} />}
         {isLoading && <Loader title="Fetching Transactions" />}{' '}
-        {transactionsData && (
-          <Transaction
-            transaction={{ type: 'PayNetWorx', ...transactionsData }}
-          />
-        )}
+        {transactionsData &&
+          transactionsData.transactionsByPaymentProcessor?.map((transaction) => (
+            <Transaction key={transaction._id} transaction={transaction} />
+          ))}
       </div>
       {/* view more button takes user to transaction page */}
       <div className={styles.buttonContainer}>

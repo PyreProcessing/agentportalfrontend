@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './TopPerformingAgents.module.scss';
 import useFetchData from '@/state/useFetchData';
 import { Table } from 'antd';
+import currencyFormatter from '@/utils/currencyFormatter';
 
 const TopPerformingAgents = () => {
   const { data, isLoading, isError, isFetching, error } = useFetchData({
@@ -32,7 +33,7 @@ const TopPerformingAgents = () => {
           title: 'Total Sales',
           dataIndex: 'total',
           key: 'sales',
-          render: (text) => `$${text}`,
+          render: (text) => `${currencyFormatter(text)}`,
         },
       ]}
       dataSource={data?.payload?.data}
