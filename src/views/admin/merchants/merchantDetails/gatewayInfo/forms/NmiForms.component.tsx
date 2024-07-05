@@ -30,7 +30,17 @@ const NmiForms = (props: NmiFormsProps) => {
                 <Input />
               </Form.Item>
             </div>
-          </div>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label={'Monthly Limit'}
+                name={['paymentGateways', 'nmi', 'monthlyLimit']}
+                rules={[]}
+                tooltip="This is the monthly limit for the merchant. The system will use this value to calculate the remaining amount for the month."
+              >
+                <Input />
+              </Form.Item>
+            </div> 
+          </div> 
         </div>
       </div>
       <div className={styles.actionContainer}>

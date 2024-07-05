@@ -41,6 +41,18 @@ const Celero = (props: CeleroProps) => {
               </Form.Item>
             </div>
           </div>
+          <div className={formStyles.form__formGroup}>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label={'Monthly Limit'}
+                name={['paymentGateways', 'celero', 'monthlyLimit']}
+                rules={[]}
+                tooltip="This is the monthly limit for the merchant. The system will use this value to calculate the remaining amount for the month."
+              >
+                <Input disabled />
+              </Form.Item>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -46,8 +46,8 @@ const GatewayInfo = () => {
       >
         <NmiForms form={form} />
         <Paynetworx form={form} />
-        <Paybright form={form} />
-        <Celero form={form} />
+        {/* <Paybright form={form} /> */}
+        {/* <Celero form={form} /> */}
         <div className={formStyles.form__buttonContainer}>
           <Button className={formStyles.button} htmlType="submit">
             {id ? 'Update Merchant' : 'Invite Merchant'}

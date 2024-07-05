@@ -89,4 +89,8 @@
     padding: 2%;
     border-radius: 10px;
   }
+  &__formGroup {
+    display: flex;
+    gap: 10px;
+  }
 }

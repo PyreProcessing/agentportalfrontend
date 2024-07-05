@@ -11,12 +11,16 @@ import { useRouter } from 'next/router';
  * @todo add types
  */
 const updateFormData = async (url: string, formData: any) => {
-  const { data } = await axios.put(url, formData);
+  const { data } = await axios.put(url, formData, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
   return data;
 };
 
 /**
- * @description react-query hook to update a Certificate
+ * @description react-query hook to update data
  */
 export default (options: {
   queriesToInvalidate?: string[];

@@ -23,7 +23,7 @@ const Paynetworx = (props: PaynetworxProps) => {
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label={'Merchant Id'}
-                name={['paymentGateways', 'payNetWorx', 'merchantUser']}
+                name={['paymentGateways', 'paynetworx', 'merchantUser']}
                 rules={[]}
                 tooltip=""
               >
@@ -33,7 +33,7 @@ const Paynetworx = (props: PaynetworxProps) => {
             <div className={formStyles.form__inputGroup}>
               <Form.Item
                 label={'Merchant Password'}
-                name={['paymentGateways', 'payNetWorx', 'merchantPass']}
+                name={['paymentGateways', 'paynetworx', 'merchantPass']}
                 rules={[]}
                 tooltip=""
               >
@@ -41,8 +41,20 @@ const Paynetworx = (props: PaynetworxProps) => {
               </Form.Item>
             </div>
           </div>
+          <div className={formStyles.form__formGroup}>
+            <div className={formStyles.form__inputGroup}>
+              <Form.Item
+                label={'Monthly Limit'}
+                name={['paymentGateways', 'paynetworx', 'monthlyLimit']}
+                rules={[]}
+                tooltip="This is the monthly limit for the merchant. The system will use this value to calculate the remaining amount for the month."
+              >
+                <Input />
+              </Form.Item>
+            </div>
+          </div>
         </div>
-      </div>{' '}
+      </div>
       <div className={styles.actionContainer}>
         {/* links to nmi platform for agent login */}
         <Button

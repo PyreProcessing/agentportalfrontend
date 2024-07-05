@@ -6,6 +6,7 @@ import GatewayInfo from './gatewayInfo/GatewayInfo.component';
 import BusinessInfo from './businessInfo/BusinessInfo.component';
 import AnimatedDiv from '@/components/UI/animatedDiv/AnimatedDiv.UI';
 import { AnimatePresence } from 'framer-motion';
+import PreferredProcessor from './preferredProcessor/PreferredProcessor.component';
 
 const MerchantDetails = () => {
   const tabs = [
@@ -23,6 +24,11 @@ const MerchantDetails = () => {
       title: 'Business Info',
       key: '3',
       content: <BusinessInfo />,
+    },
+    {
+      title: 'Preferred Processor',
+      key: '4',
+      content: <PreferredProcessor />,
     },
   ];
 

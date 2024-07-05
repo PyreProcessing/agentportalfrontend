@@ -24,7 +24,17 @@ const BusinessInfo = () => {
     enabled: !!id,
   });
   const onFinish = async (values: any) => {
-    updateMerchant({ url: `/merchant/${id}`, formData: { ...values } });
+    updateMerchant({
+      url: `/merchant/${id}`,
+      formData: {
+        businessInfo: {
+          // we want to spread out all other values that werent in the form,
+          // and then add the form values
+          ...data.payload.businessInfo,
+          ...values.businessInfo,
+        },
+      },
+    });
   };
   React.useEffect(() => {
     if (id && data?.payload) {
